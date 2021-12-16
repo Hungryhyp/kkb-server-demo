@@ -36,6 +36,7 @@ public class HkBannerController {
     @RequestMapping(value = "/qryList", method = RequestMethod.POST)
     public ResponseEntity<String> qryList(HkBannerRequest hkBannerRequest) {
         log.info("进入banner列表接口");
+        log.info("开始");
         return ReqResultUtil.genSuccessResultResponse(hkBannerService.qryList(hkBannerRequest));
 
     }
