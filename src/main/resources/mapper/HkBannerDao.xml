@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kkb.hk.dao.HkBannerDao">
+
+    <resultMap type="com.kkb.hk.vo.response.banner.HkBannerResponse" id="HkBannerResponseMap">
+        <result property="bannerId" column="banner_id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="image" column="image" jdbcType="VARCHAR"/>
+        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="updatedBy" column="updated_by" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询banner列表数据-->
+    <select id="qryList" resultMap="HkBannerResponseMap">
+        select
+        banner_id, title, description, image, url
+        from hk_banner where status=0
+        <if test="title != null">
+            and title like CONCAT('%',#{title},'%')
+        </if>
+        order by sort asc,banner_id desc
+    </select>
+
+</mapper>
+

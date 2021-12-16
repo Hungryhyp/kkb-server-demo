@@ -1,0 +1,83 @@
+16:03:23.753 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.0.22.Final
+16:03:23.779 [restartedMain] INFO  c.k.h.DemoApplication - [logStarting,55] - Starting DemoApplication on Allen with PID 15356 (E:\workspace\demo\kkb-server-demo\target\classes started by Allen in E:\workspace\demo\kkb-server-demo)
+16:03:23.789 [restartedMain] INFO  c.k.h.DemoApplication - [logStartupProfileInfo,655] - The following profiles are active: druid
+16:03:25.699 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+16:03:25.708 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:03:25.708 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+16:03:25.788 [restartedMain] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:03:27.715 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+16:03:27.747 [restartedMain] INFO  c.k.h.DemoApplication - [logStarted,61] - Started DemoApplication in 4.352 seconds (JVM running for 5.95)
+16:03:28.003 [RMI TCP Connection(1)-10.10.37.21] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:03:30.103 [RMI TCP Connection(2)-10.10.37.21] INFO  c.a.d.p.DruidDataSource - [init,986] - {dataSource-1} inited
+16:03:30.514 [boundedElastic-1] INFO  i.l.c.EpollProvider - [<clinit>,68] - Starting without optional epoll library
+16:03:30.514 [boundedElastic-1] INFO  i.l.c.KqueueProvider - [<clinit>,70] - Starting without optional kqueue library
+16:05:04.463 [http-nio-8080-exec-2] INFO  c.k.h.c.HkBannerController - [qryList,39] - 进入banner列表接口
+16:16:17.679 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2039] - {dataSource-1} closing ...
+16:16:17.682 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2111] - {dataSource-1} closed
+16:16:24.244 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.0.22.Final
+16:16:24.259 [restartedMain] INFO  c.k.h.DemoApplication - [logStarting,55] - Starting DemoApplication on Allen with PID 14476 (E:\workspace\demo\kkb-server-demo\target\classes started by Allen in E:\workspace\demo\kkb-server-demo)
+16:16:24.260 [restartedMain] INFO  c.k.h.DemoApplication - [logStartupProfileInfo,655] - The following profiles are active: druid
+16:16:25.865 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+16:16:25.866 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:16:25.866 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+16:16:25.939 [restartedMain] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:16:27.490 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+16:16:27.515 [restartedMain] INFO  c.k.h.DemoApplication - [logStarted,61] - Started DemoApplication in 3.666 seconds (JVM running for 4.614)
+16:16:28.054 [RMI TCP Connection(2)-10.10.37.21] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:16:29.953 [RMI TCP Connection(1)-10.10.37.21] INFO  c.a.d.p.DruidDataSource - [init,986] - {dataSource-1} inited
+16:16:30.302 [boundedElastic-1] INFO  i.l.c.EpollProvider - [<clinit>,68] - Starting without optional epoll library
+16:16:30.303 [boundedElastic-1] INFO  i.l.c.KqueueProvider - [<clinit>,70] - Starting without optional kqueue library
+16:16:49.712 [http-nio-8080-exec-2] INFO  c.k.h.c.HkBannerController - [qryList,38] - 进入banner列表接口
+16:17:00.900 [http-nio-8080-exec-5] INFO  c.k.h.c.HkBannerController - [qryList,38] - 进入banner列表接口
+16:17:00.907 [http-nio-8080-exec-5] INFO  c.k.h.e.DealGlobalException - [queryException,33] - 发生异常nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'type' in 'class com.kkb.hk.vo.request.banner.HkBannerRequest'
+16:18:09.963 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2039] - {dataSource-1} closing ...
+16:18:09.970 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2111] - {dataSource-1} closed
+16:18:14.690 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.0.22.Final
+16:18:14.707 [restartedMain] INFO  c.k.h.DemoApplication - [logStarting,55] - Starting DemoApplication on Allen with PID 12536 (E:\workspace\demo\kkb-server-demo\target\classes started by Allen in E:\workspace\demo\kkb-server-demo)
+16:18:14.708 [restartedMain] INFO  c.k.h.DemoApplication - [logStartupProfileInfo,655] - The following profiles are active: druid
+16:18:16.287 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+16:18:16.288 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:18:16.288 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+16:18:16.387 [restartedMain] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:18:18.019 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+16:18:18.040 [restartedMain] INFO  c.k.h.DemoApplication - [logStarted,61] - Started DemoApplication in 3.645 seconds (JVM running for 4.482)
+16:18:18.339 [RMI TCP Connection(5)-10.10.37.21] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:18:20.696 [RMI TCP Connection(7)-10.10.37.21] INFO  c.a.d.p.DruidDataSource - [init,986] - {dataSource-1} inited
+16:18:21.095 [boundedElastic-1] INFO  i.l.c.EpollProvider - [<clinit>,68] - Starting without optional epoll library
+16:18:21.096 [boundedElastic-1] INFO  i.l.c.KqueueProvider - [<clinit>,70] - Starting without optional kqueue library
+16:18:37.149 [http-nio-8080-exec-2] INFO  c.k.h.c.HkBannerController - [qryList,38] - 进入banner列表接口
+16:18:37.203 [http-nio-8080-exec-2] INFO  c.k.h.e.DealGlobalException - [queryException,33] - 发生异常nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'type' in 'class com.kkb.hk.vo.request.banner.HkBannerRequest'
+16:19:06.130 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2039] - {dataSource-1} closing ...
+16:19:06.136 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2111] - {dataSource-1} closed
+16:19:08.878 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.0.22.Final
+16:19:08.895 [restartedMain] INFO  c.k.h.DemoApplication - [logStarting,55] - Starting DemoApplication on Allen with PID 21116 (E:\workspace\demo\kkb-server-demo\target\classes started by Allen in E:\workspace\demo\kkb-server-demo)
+16:19:08.895 [restartedMain] INFO  c.k.h.DemoApplication - [logStartupProfileInfo,655] - The following profiles are active: druid
+16:19:10.265 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+16:19:10.266 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:19:10.266 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+16:19:10.331 [restartedMain] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:19:11.937 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+16:19:11.960 [restartedMain] INFO  c.k.h.DemoApplication - [logStarted,61] - Started DemoApplication in 3.398 seconds (JVM running for 4.219)
+16:19:12.457 [RMI TCP Connection(4)-10.10.37.21] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:19:14.626 [RMI TCP Connection(3)-10.10.37.21] INFO  c.a.d.p.DruidDataSource - [init,986] - {dataSource-1} inited
+16:19:15.019 [boundedElastic-1] INFO  i.l.c.EpollProvider - [<clinit>,68] - Starting without optional epoll library
+16:19:15.021 [boundedElastic-1] INFO  i.l.c.KqueueProvider - [<clinit>,70] - Starting without optional kqueue library
+16:19:22.755 [http-nio-8080-exec-1] INFO  c.k.h.c.HkBannerController - [qryList,38] - 进入banner列表接口
+16:19:28.664 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2039] - {dataSource-1} closing ...
+16:19:28.669 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2111] - {dataSource-1} closed
+16:19:31.314 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.0.22.Final
+16:19:31.330 [restartedMain] INFO  c.k.h.DemoApplication - [logStarting,55] - Starting DemoApplication on Allen with PID 5556 (E:\workspace\demo\kkb-server-demo\target\classes started by Allen in E:\workspace\demo\kkb-server-demo)
+16:19:31.331 [restartedMain] INFO  c.k.h.DemoApplication - [logStartupProfileInfo,655] - The following profiles are active: druid
+16:19:32.681 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+16:19:32.682 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:19:32.682 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+16:19:32.749 [restartedMain] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:19:34.226 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+16:19:34.247 [restartedMain] INFO  c.k.h.DemoApplication - [logStarted,61] - Started DemoApplication in 3.234 seconds (JVM running for 4.017)
+16:19:34.775 [RMI TCP Connection(1)-10.10.37.21] INFO  o.a.c.c.C.[.[.[/kkb-server-demo] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:19:36.653 [RMI TCP Connection(2)-10.10.37.21] INFO  c.a.d.p.DruidDataSource - [init,986] - {dataSource-1} inited
+16:19:36.993 [boundedElastic-1] INFO  i.l.c.EpollProvider - [<clinit>,68] - Starting without optional epoll library
+16:19:36.994 [boundedElastic-1] INFO  i.l.c.KqueueProvider - [<clinit>,70] - Starting without optional kqueue library
+16:19:40.897 [http-nio-8080-exec-2] INFO  c.k.h.c.HkBannerController - [qryList,38] - 进入banner列表接口
+17:50:37.850 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2039] - {dataSource-1} closing ...
+17:50:37.853 [SpringContextShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2111] - {dataSource-1} closed
