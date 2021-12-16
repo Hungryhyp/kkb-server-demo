@@ -27,5 +27,16 @@
         order by sort asc,banner_id desc
     </select>
 
+    <!--查询banner列表分页数据-->
+    <select id="qryListByPage" resultMap="HkBannerResponseMap">
+        select
+        banner_id, title, description, image, url
+        from hk_banner where status=0
+        <if test="title != null">
+            and title like CONCAT('%',#{title},'%')
+        </if>
+        order by sort asc,banner_id desc
+    </select>
+
 </mapper>
 

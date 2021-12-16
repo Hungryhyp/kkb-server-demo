@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 
 /**
  * @className HkBannerController
- * @description:banner接口
+ * @description:banner接口层
  * @author Allen
  * @date 2021/12/16 15:48
  */
@@ -39,6 +39,19 @@ public class HkBannerController {
         log.info("开始");
         return ReqResultUtil.genSuccessResultResponse(hkBannerService.qryList(hkBannerRequest));
 
+    }
+
+    /**
+     * @description:分页查询banner列表
+     * @param: [hkBannerRequest]
+     * @return: org.springframework.http.ResponseEntity<java.lang.String>
+     * @author Allen
+     * @date: 2021/12/16 18:53
+     */
+    @RequestMapping(value = "/qryListByPage", method = RequestMethod.POST)
+    public ResponseEntity<String> qryListByPage(HkBannerRequest hkBannerRequest) {
+        log.info("进入banner列表接口");
+        return ReqResultUtil.genSuccessResultResponse(hkBannerService.qryListByPage(hkBannerRequest));
     }
 
 
