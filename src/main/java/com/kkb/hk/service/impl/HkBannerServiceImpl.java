@@ -32,7 +32,7 @@ public class HkBannerServiceImpl implements HkBannerService {
      * @param: [hkBannerRequest]
      * @return: java.util.List<com.kkb.hk.vo.response.banner.HkBannerResponse>
      * @author Allen
-     * @date: 2021/12/16 16:24
+     * @date: 2021/12/16 19:29
      */
     @Override
     public List<HkBannerResponse> qryList(HkBannerRequest hkBannerRequest) {

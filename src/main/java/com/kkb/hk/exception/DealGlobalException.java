@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * @Description 公益故事全局异常处理器
+ * @Description
  * @Date 2021/10/9 18:16
  * @Created 30500
  */

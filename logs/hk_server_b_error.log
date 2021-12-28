@@ -1,1 +1,0 @@
-17:16:24.133 [AMQP Connection 101.132.108.91:5672] ERROR o.s.a.r.c.CachingConnectionFactory - [log,1575] - Channel shutdown: connection error
