@@ -1,15 +1,18 @@
 package com.kkb.hk.controller;
 
+import com.kkb.hk.entity.HkBanner;
 import com.kkb.hk.service.HkBannerService;
 import com.kkb.hk.utils.ReqResultUtil;
 import com.kkb.hk.vo.request.banner.HkBannerRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @className HkBannerController
@@ -25,6 +28,7 @@ public class HkBannerController {
 
     @Resource
     private HkBannerService hkBannerService;
+
 
     /**
      * @description:  查询banner列表
@@ -54,6 +58,55 @@ public class HkBannerController {
         return ReqResultUtil.genSuccessResultResponse(hkBannerService.qryListByPage(hkBannerRequest));
     }
 
+
+    @RequestMapping(value = "/addBanner",method = RequestMethod.POST)
+    public ResponseEntity<String> addBanner(HkBanner hkBanner){
+        log.info("进入banner添加接口");
+        hkBanner.setStatus(0);//设置默认状态为0
+        hkBanner.setSort(1); //sort不能为空，暂用于测试
+        hkBanner.setCreatedBy("pyh");//此处应当从session中获取用户的信息作为记录的创建者
+        hkBanner.setCreatedTime(new Date(System.currentTimeMillis()));
+        //返回影响行数作为判断是否操作成功的依据
+        Integer addBannerCount = hkBannerService.addBanner(hkBanner);
+        if (addBannerCount >= 1){
+            //添加成功，返回成功信息
+            return ReqResultUtil.genSuccessResultResponse();
+        }else {
+            //添加失败，返回系统异常
+            return ReqResultUtil.genFailResultResponse();
+        }
+
+    }
+
+    @RequestMapping(value = "/updateBanner",method = RequestMethod.PUT)
+    public ResponseEntity<String> updateBanner(HkBanner hkBanner){
+        log.info("进入banner修改接口");
+        hkBanner.setStatus(0);//设置默认状态为0
+        hkBanner.setSort(1); //sort不能为空，暂用于测试
+        hkBanner.setUpdatedBy("pyh");//此处应当从session中获取用户的信息作为记录的修改者
+        hkBanner.setUpdatedTime(new Date(System.currentTimeMillis()));
+        Integer updateBannerCount = hkBannerService.updateBanner(hkBanner);
+        if (updateBannerCount >= 1){
+            //添加成功，返回成功信息
+            return ReqResultUtil.genSuccessResultResponse();
+        }else {
+            //添加失败，返回系统异常
+            return ReqResultUtil.genFailResultResponse();
+        }
+    }
+
+    @RequestMapping(value = "/deleteBannerById",method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteBannerById(Integer bannerId){
+        log.info("进入删除接口");
+        Integer deleteBannerCount = hkBannerService.deleteBannerById(bannerId);
+        if (deleteBannerCount >= 1){
+            //添加成功，返回成功信息
+            return ReqResultUtil.genSuccessResultResponse();
+        }else {
+            //添加失败，返回系统异常
+            return ReqResultUtil.genFailResultResponse();
+        }
+    }
 
 }
 

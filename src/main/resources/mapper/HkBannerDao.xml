@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kkb.hk.dao.HkBannerDao">
 
+    <!--抽取banner表列名-->
+    <sql id="banner_col">
+        title,description,image,url,status,sort,created_by,created_time,updated_by,updated_time
+    </sql>
+
     <resultMap type="com.kkb.hk.vo.response.banner.HkBannerResponse" id="HkBannerResponseMap">
         <result property="bannerId" column="banner_id" jdbcType="INTEGER"/>
         <result property="title" column="title" jdbcType="VARCHAR"/>
@@ -37,6 +42,54 @@
         </if>
         order by sort asc,banner_id desc
     </select>
+
+    <!--添加banner列表记录-->
+    <insert id="addBanner">
+        insert into hk_banner(
+        <include refid="banner_col"/>
+        )values (#{title}, #{description}, #{image}, #{url}, #{status}, #{sort}, #{createdBy}, #{createdTime}, #{updatedBy}, #{updatedTime})
+    </insert>
+
+    <!--修改banner列表记录-->
+    <!--title,description,image,url,status,sort,created_by,created_time,updated_by,updated_time-->
+    <update id="updateBanner">
+        update hk_banner
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="image != null">
+                image = #{image},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="updatedBy != null">
+                updated_by = #{updatedBy},
+            </if>
+            <if test="updatedTime != null">
+                updated_time = #{updatedTime},
+            </if>
+        </set>
+        where banner_id = #{bannerId}
+
+    </update>
+
+
+    <!--根据id删除banner列表记录-->
+    <delete id="deleteBannerById">
+        delete from hk_banner
+        where banner_id = #{bannerId}
+    </delete>
 
 </mapper>
 

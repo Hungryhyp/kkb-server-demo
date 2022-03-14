@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.kkb.hk.dao.HkBannerDao;
+import com.kkb.hk.entity.HkBanner;
 import com.kkb.hk.entity.page.PageResult;
 import com.kkb.hk.service.HkBannerService;
 import com.kkb.hk.utils.PageUtils;
@@ -63,6 +64,21 @@ public class HkBannerServiceImpl implements HkBannerService {
         PageHelper.startPage(pageNum, pageSize);
         List<HkBannerResponse> responseList = this.hkBannerDao.qryListByPage(hkBannerRequest);
         return PageUtils.getPageResult(new PageInfo<HkBannerResponse>(responseList));
+    }
+
+    @Override
+    public Integer addBanner(HkBanner hkBanner) {
+        return hkBannerDao.addBanner(hkBanner);
+    }
+
+    @Override
+    public Integer updateBanner(HkBanner hkBanner) {
+        return hkBannerDao.updateBanner(hkBanner);
+    }
+
+    @Override
+    public Integer deleteBannerById(Integer bannerId) {
+        return hkBannerDao.deleteBannerById(bannerId);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.kkb.hk.dao;
 
+import com.kkb.hk.entity.HkBanner;
 import com.kkb.hk.vo.request.banner.HkBannerRequest;
 import com.kkb.hk.vo.response.banner.HkBannerResponse;
 import org.apache.ibatis.annotations.Mapper;
@@ -33,5 +34,25 @@ public interface HkBannerDao {
      */
     List<HkBannerResponse> qryListByPage(HkBannerRequest hkBannerRequest);
 
+    /**
+     * 数据库添加一条banner记录
+     * @param hkBanner
+     * @return
+     */
+    Integer addBanner(HkBanner hkBanner);
+
+    /**
+     * 修改一条banner记录
+     * @param hkBanner
+     * @return
+     */
+    Integer updateBanner(HkBanner hkBanner);
+
+    /**
+     * 按id删除一条记录
+     * @param bannerId
+     * @return
+     */
+    Integer deleteBannerById(Integer bannerId);
 }
 

@@ -1,8 +1,10 @@
 package com.kkb.hk.service;
 
+import com.kkb.hk.entity.HkBanner;
 import com.kkb.hk.entity.page.PageResult;
 import com.kkb.hk.vo.request.banner.HkBannerRequest;
 import com.kkb.hk.vo.response.banner.HkBannerResponse;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -31,4 +33,15 @@ public interface HkBannerService {
      * @date: 2021/12/16 16:23
      */
     PageResult qryListByPage(HkBannerRequest hkBannerRequest);
+
+    /**
+     * 添加一条banner记录
+     * @param hkBanner
+     * @return
+     */
+    Integer addBanner(HkBanner hkBanner);
+
+    Integer updateBanner(HkBanner hkBanner);
+
+    Integer deleteBannerById(Integer bannerId);
 }

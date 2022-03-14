@@ -32,9 +32,19 @@ spring:
   profiles:
     #druid：测试环境  rel：预发环境  prod:生产环境
     active: druid
+    #设置dispatchservlet启动时间为服务器启动时
+  mvc:
+    servlet:
+      load-on-startup: 1
+    view:
+      prefix: "classpath:/templates/"
+      suffix: ".html"
 
 # 日志配置
 logging:
   level:
     com.kkb.hk: debug
     org.springframework: warn
+
+
+
