@@ -35,6 +35,7 @@ public class StoryTest {
 
     @Resource
     private HkBannerDao hkBannerDao;
+    //测试数据库连接
     @Test
     public void test1() throws SQLException {
 
@@ -43,6 +44,8 @@ public class StoryTest {
         for (HkBannerResponse bannerRespons : bannerResponses) {
             System.out.println(bannerRespons);
         }
+
+        System.out.println("测试从feature_pyh 分支提交");
     }
 
 }
