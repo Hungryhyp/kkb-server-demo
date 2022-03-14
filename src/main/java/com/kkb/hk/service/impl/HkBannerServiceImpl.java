@@ -12,6 +12,10 @@ import com.kkb.hk.utils.PageUtils;
 import com.kkb.hk.utils.StringUtils;
 import com.kkb.hk.vo.request.banner.HkBannerRequest;
 import com.kkb.hk.vo.response.banner.HkBannerResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,9 +28,15 @@ import java.util.List;
  * @date 2021/12/16 15:57
  */
 @Service("hkBannerService")
+@Slf4j
 public class HkBannerServiceImpl implements HkBannerService {
     @Resource
     private HkBannerDao hkBannerDao;
+
+    @Resource
+    private RedisTemplate<String, List<HkBannerResponse>> redisTemplate;
+
+
 
     /**
      * @description:  查询banner列表
@@ -38,16 +48,47 @@ public class HkBannerServiceImpl implements HkBannerService {
     @Override
     public List<HkBannerResponse> qryList(HkBannerRequest hkBannerRequest) {
         //此处代码需要先从redis中获取，获取不到则取查数据库
-        String historyJsON = null;
+        //获取当前请求的title参数
+        String requestTitle = hkBannerRequest.getTitle();
+        ValueOperations<String, List<HkBannerResponse>> operations = redisTemplate.opsForValue();
 
-        if (StringUtils.isEmpty(historyJsON)) {
-            //缓存中没有数据，查询数据库
-            List<HkBannerResponse> list = hkBannerDao.qryList(hkBannerRequest);
-            //此处代码需要把查出来的结果set redis缓存
+        if (requestTitle != null){
+            //1.若title不为空
+            // 获取缓存数据
+            List<HkBannerResponse> list = operations.get(requestTitle);
+            if(null==list){
+                log.info("缓存中数据不存在");
+                //缓存中没有数据，查询数据库
+                list = hkBannerDao.qryList(hkBannerRequest);
+                //此处代码需要把查出来的结果set redis缓存
+                operations.set(requestTitle, list);
+                return list;
+                //this.redisTemplate.opsForList().leftPush(requestTitle, list);
+            }
+            log.info("从缓存中获取的数据");
+            log.info(JSON.toJSONString(list));
             return list;
+
+        }else {
+            //2.若title为空，查询所有
+            // 获取缓存数据
+            List<HkBannerResponse> list = operations.get("allBanner");
+            if(null==list){
+                log.info("缓存中数据不存在");
+                //缓存中没有数据，查询数据库
+                list = hkBannerDao.qryList(hkBannerRequest);
+                //此处代码需要把查出来的结果set redis缓存
+                operations.set("allBanner", list);
+                return list;
+                //this.redisTemplate.opsForList().leftPush(requestTitle, list);
+            }
+            log.info("从缓存中获取的数据");
+            log.info(JSON.toJSONString(list));
+            return list;
+
         }
-        List<HkBannerResponse> list = JSON.parseObject(historyJsON, new TypeReference<List<HkBannerResponse>>() {});
-        return list;
+
+
     }
 
     /**

@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -46,6 +48,19 @@ public class StoryTest {
         }
 
         System.out.println("测试从feature_pyh 分支提交");
+    }
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Test
+    public void test() throws Exception {
+
+        ValueOperations<String, String> operations = stringRedisTemplate.opsForValue();
+        // 保存字符串
+        operations.set("aaa","111");
+        //stringRedisTemplate.opsForValue().set("aaa", "111");
+        System.out.println(operations.get("aaa"));
     }
 
 }
