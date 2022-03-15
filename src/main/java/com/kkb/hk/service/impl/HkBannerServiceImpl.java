@@ -107,16 +107,31 @@ public class HkBannerServiceImpl implements HkBannerService {
         return PageUtils.getPageResult(new PageInfo<HkBannerResponse>(responseList));
     }
 
+    /**
+     * 添加一条banner记录
+     * @param hkBanner
+     * @return
+     */
     @Override
     public Integer addBanner(HkBanner hkBanner) {
         return hkBannerDao.addBanner(hkBanner);
     }
 
+    /**
+     * 修改banner列表记录
+     * @param hkBanner
+     * @return
+     */
     @Override
     public Integer updateBanner(HkBanner hkBanner) {
         return hkBannerDao.updateBanner(hkBanner);
     }
 
+    /**
+     * 根据id删除banner列表记录
+     * @param bannerId
+     * @return
+     */
     @Override
     public Integer deleteBannerById(Integer bannerId) {
         return hkBannerDao.deleteBannerById(bannerId);

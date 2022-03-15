@@ -41,7 +41,17 @@ public interface HkBannerService {
      */
     Integer addBanner(HkBanner hkBanner);
 
+    /**
+     * 修改banner列表记录
+     * @param hkBanner
+     * @return
+     */
     Integer updateBanner(HkBanner hkBanner);
 
+    /**
+     * 根据id删除banner列表记录
+     * @param bannerId
+     * @return
+     */
     Integer deleteBannerById(Integer bannerId);
 }

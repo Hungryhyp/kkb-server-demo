@@ -59,6 +59,11 @@ public class HkBannerController {
     }
 
 
+    /**
+     * 添加banner列表记录
+     * @param hkBanner
+     * @return
+     */
     @RequestMapping(value = "/addBanner",method = RequestMethod.POST)
     public ResponseEntity<String> addBanner(HkBanner hkBanner){
         log.info("进入banner添加接口");
@@ -78,6 +83,11 @@ public class HkBannerController {
 
     }
 
+    /**
+     * 修改banner列表记录
+     * @param hkBanner
+     * @return
+     */
     @RequestMapping(value = "/updateBanner",method = RequestMethod.PUT)
     public ResponseEntity<String> updateBanner(HkBanner hkBanner){
         log.info("进入banner修改接口");
@@ -95,6 +105,11 @@ public class HkBannerController {
         }
     }
 
+    /**
+     * 根据id删除banner列表记录
+     * @param bannerId
+     * @return
+     */
     @RequestMapping(value = "/deleteBannerById",method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteBannerById(Integer bannerId){
         log.info("进入删除接口");
